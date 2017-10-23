@@ -11,3 +11,23 @@ var config = {
 
 
 
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+function submitForm(e){
+    e.preventDefault();
+
+    // Get values
+    var name = getInputValues('name');
+    var company = getInputValues('company');
+    var email = getInputValues('email');
+    var phone = getInputValues('phone');
+    var message = getInputValues('message');
+
+    console.log(name)
+}
+
+// Function to get form values
+function getInputValues(id){
+    return document.getElementById(id).value;
+}
